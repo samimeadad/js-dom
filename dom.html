@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JS DOM</title>
+
+        <style>
+            /* #first-title {
+                background-color: rgba(165, 42, 42, 0.158);
+            } */
+
+            /* .blog {
+                border: 2px solid orange;
+                margin: 5px;
+                padding: 10px;
+                border-radius: 20px;
+            } */
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <h1>Welcome to my blog website</h1>
+        </header>
+        <main>
+            <!-- blog seciton starts here -->
+            <section class="blogs">
+                <header>
+                    <h2>Blog List</h2>
+                    <ul id="blog-list">
+                        <li>Blog-1</li>
+                        <li>Blog-2</li>
+                        <li>Blog-3</li>
+                        <li>Blog-4</li>
+                    </ul>
+                </header>
+
+            </section>
+            <section id="blogs" class="blogs">
+                <article id="first-blog" class="blog">
+                    <h3 id="first-title">My Awesome Blog - 1</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae odio sit neque repellendus
+                        commodi, fuga ex animi quasi vel mollitia maiores a, similique, aspernatur dolores deleniti
+                        temporibus omnis. Autem sunt recusandae aspernatur aliquam, nesciunt praesentium ducimus impedit
+                        ratione, distinctio accusantium dolorum soluta tempore, dolorem hic? Voluptas ea tenetur
+                        recusandae esse.</p>
+                </article>
+                <article id="second-blog" class="blog">
+                    <h3 id="second-title">My Awesome Blog - 2</h3>
+                    <p>Reiciendis assumenda quia non nesciunt eius. Debitis accusantium voluptatibus natus cumque,
+                        atque, laborum dignissimos rem laboriosam illo dolor facere ullam eaque ad. Consequatur
+                        reiciendis magnam alias minima, aspernatur maiores expedita dolorum aliquam commodi eos iure!
+                        Mollitia tenetur architecto hic illo corrupti ratione. Sequi ab ipsam aliquid optio earum quis
+                        dignissimos!</p>
+                </article>
+                <article id="third-blog" class="blog">
+                    <h3 id="third-title">My Awesome Blog - 3</h3>
+                    <p>Reprehenderit rerum iusto reiciendis obcaecati optio, autem voluptate veniam. Libero praesentium
+                        minus suscipit iste, velit quidem obcaecati dolorem consequuntur quaerat deleniti consectetur
+                        sunt maiores error animi quia expedita accusantium perspiciatis est porro aliquam. Voluptas
+                        aliquam enim esse, ullam impedit voluptatem officia soluta totam atque velit nisi tempore illo.
+                        Culpa, sit.</p>
+                </article>
+            </section>
+        </main>
+        <script>
+            /* const student = {name: "kismot ali", age: 16, height: 60};
+            const blogTitles = document.body.getElementsByTagName( 'h3' );
+            for ( const h3 of blogTitles )
+            {
+                console.log( h3.innerText );
+            }
+
+            const blogDetails = document.getElementsByTagName( 'p' );
+            for ( const p of blogDetails )
+            {
+                console.log( p.innerText );
+            } */
+
+            //Explore getElementById
+            const firstTitle = document.getElementById( "first-title" );
+            const secondTitle = document.getElementById( "second-title" );
+            const thirdTitle = document.getElementById( "third-title" );
+
+            console.log( secondTitle );
+            firstTitle.style.backgroundColor = "lightyellow";
+            secondTitle.style.textAlign = "center";
+            thirdTitle.style.color = "red";
+            thirdTitle.style.backgroundColor = "lightblue";
+            thirdTitle.style.padding = "20px";
+            thirdTitle.innerText = "Title Updated by JavaScript";
+
+
+            //create and add an element using JavaScript
+
+            //create
+            const li = document.createElement( 'li' );
+            li.innerText = "Blog-5";
+
+            //where to add
+            const ul = document.getElementById( 'blog-list' );
+
+            //append new element to the parent
+            ul.appendChild( li );
+
+
+            //add an ariticle
+            const article = document.createElement( 'article' );
+            article.classList.add( 'blog' );
+
+            const h3 = document.createElement( 'h3' );
+            h3.innerText = "My Awesome Blog-5";
+
+            const p = document.createElement( 'p' );
+            p.innerText = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae odio sit neque repellendus commodi, fuga ex animi quasi vel mollitia maiores a, similique, aspernatur dolores delenititemporibus omnis.Autem sunt recusandae aspernatur aliquam, nesciunt praesentium ducimus impedit ratione, distinctio accusantium dolorum soluta tempore, dolorem hic ? Voluptas ea tenetur recusandae esse."
+
+            article.appendChild( h3 );
+            article.appendChild( p );
+
+            //parent of article
+            const blogSection = document.getElementById( 'blogs' );
+            blogSection.appendChild( article );
+
+            //Explore getElementsByClassName
+            const blogs = document.getElementsByClassName( 'blog' );
+            for ( const blog of blogs )
+            {
+                blog.style.border = "2px solid orange";
+                blog.style.borderRadius = "10px";
+                blog.style.padding = "10px";
+                blog.style.margin = "5px";
+            }
+        </script>
+    </body>
+
+</html>
